@@ -7,14 +7,12 @@
 #    driver-class-name: org.postgresql.Driver
 
 # JPA and Hibernate configuration
-#spring:
-#  jpa:
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
-#    generate-ddl: true
-#    show-sql: true
+#jpa:
+#  database-platform: org.hibernate.dialect.PostgreSQLDialect
+#  generate-ddl: true
+#  show-sql: true
 #
 # Hibernate ddl-auto configuration
-#spring:
 #  jpa:
 #    hibernate:
 #      ddl-auto: update
