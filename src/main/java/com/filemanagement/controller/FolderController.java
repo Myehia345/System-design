@@ -22,7 +22,7 @@ public class FolderController {
             @PathVariable Long spaceId,
             @RequestHeader HttpHeaders httpHeaders,
             @RequestBody CreateFolderRequest request) {
-        String user = httpHeaders.get("userName").toString();
+        String user = httpHeaders.get("userEmail").toString();
         Item folder = folderService.createFolder(request.getName(), spaceId);
         return ResponseEntity.status(HttpStatus.CREATED).body(folder);
     }

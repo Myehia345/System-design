@@ -23,6 +23,7 @@ public class FileController {
             @PathVariable Long folderId,
             @RequestHeader HttpHeaders httpHeaders,
             @RequestParam("fileData") MultipartFile fileData) {
+        String user = httpHeaders.get("userEmail").toString();
         File file = fileService.createFile(folderId, fileData);
         return ResponseEntity.status(HttpStatus.CREATED).body(file);
     }

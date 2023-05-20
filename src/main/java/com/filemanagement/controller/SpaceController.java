@@ -20,6 +20,7 @@ public class SpaceController {
     @PostMapping
     public ResponseEntity<Item> createSpace(@RequestBody CreateSpaceRequest request,
                                             @RequestHeader HttpHeaders httpHeaders) {
+        String user = httpHeaders.get("userEmail").toString();
         Item space = spaceService.createSpace(request.getName(), request.getGroupName());
         return ResponseEntity.status(HttpStatus.CREATED).body(space);
     }
