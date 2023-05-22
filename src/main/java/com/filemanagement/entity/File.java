@@ -1,7 +1,5 @@
 package com.filemanagement.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,10 +10,10 @@ public class File {
     private Long id;
 
     @Lob
-    private byte[] binary;
+    private byte[] file_data;
 
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "item_id", nullable = false)
     private Item item;
 
     public Long getId() {
@@ -26,12 +24,12 @@ public class File {
         this.id = id;
     }
 
-    public byte[] getBinary() {
-        return binary;
+    public byte[] getFile_data() {
+        return file_data;
     }
 
-    public void setBinary(byte[] binary) {
-        this.binary = binary;
+    public void setFile_data(byte[] file_data) {
+        this.file_data = file_data;
     }
 
     public Item getItem() {
